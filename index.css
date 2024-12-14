@@ -1,0 +1,180 @@
+* {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  font-variant: small-caps;
+}
+
+body {
+  background-color: black;
+  color: antiquewhite;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+section {
+  display: flexbox;
+  height: 60dvh;
+  width: 95dvw;
+  margin-bottom: 5px;
+  /* remove border after development */
+  border: 1px solid aqua;
+  border-radius: 5%;
+  vertical-align: middle;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+h1 {
+  font-size: xx-large;
+}
+
+h2 {
+  font-size: larger;
+}
+
+section#welcome-section {
+  display: flex;
+  background-color: rgb(2, 2, 43);
+  color: rgb(100, 206, 100);
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+section#about-me-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "section-title section-title section-title"
+    "section-image section-content section-content"
+    "section-image section-content section-content";
+}
+
+div.section-title {
+  grid-area: section-title;
+  width: 95%;
+}
+
+div.section-content {
+  grid-area: section-content;
+}
+
+div.section-image {
+  grid-area: section-image;
+}
+
+div.description-parent {
+  border: 1px solid grey;
+  margin-bottom: 4px;
+  border-radius: 40px;
+  width: 100%;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-template-areas: "item-icon item-details";
+}
+
+img.logo {
+  height: 25px;
+  padding: 0;
+  margin: 0;
+}
+
+.item-icon {
+  grid-area: item-icon;
+}
+
+.item-details {
+  grid-area: item-details;
+}
+
+section#about-me-section {
+  background-color: rgb(6, 30, 83);
+}
+
+section#technical-skills-section {
+  background-color: rgb(26, 0, 29);
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+div.tech-skill-content {
+  display: grid;
+  grid-template-rows: repeat(auto-fit, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+div.tech-skill-item {
+  flex: 3 3 auto;
+  margin: 5px;
+  border: 1px solid grey;
+  word-wrap: normal;
+  border-radius: 15px;
+}
+
+div.tech-skill-title {
+  font-weight: bolder;
+}
+
+div.tech-skill-details {
+  font-size: xx-small;
+}
+
+section#professional-experiences-section {
+  background-color: rgb(40, 0, 77);
+}
+
+div#professional-experience-content {
+  display: grid;
+  grid-template-rows: repeat(2, 240px);
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+div.prof-exp-item {
+  flex: 1 1 auto;
+  border: 1px solid grey;
+  word-wrap: normal;
+  border-radius: 15px;
+}
+
+section#projects-section {
+  background-color: rgb(40, 0, 77);
+}
+
+div#projects-content {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+div.project-item {
+  flex: 1 1 auto;
+  border: 1px solid grey;
+  word-wrap: normal;
+  border-radius: 15px;
+}
+
+img.hobby-image {
+  border-radius: 50%;
+  height: 100px;
+}
+
+div.hobby-item:not(:hover) {
+  opacity: 0.5;
+}
+
+div.hobby-item:hover {
+  opacity: 1;
+}
