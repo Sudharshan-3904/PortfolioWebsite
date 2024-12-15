@@ -2,23 +2,34 @@
   font-family: Verdana, Arial, Helvetica, sans-serif;
   font-weight: normal;
   font-variant: small-caps;
+  --hexagon-width: 250px;
+  --hexagon-height: --hexagon-width * 0.55;
+  --hexagon-margin: 25px;
+  --hexagon-title-color: #fff;
+  --hexagon-border-color: #fff;
+  --hexagon-border-color--hover: #72f88e;
+  --hexagon-image-color: #3ea0eb;
+  --honeycomb-max-width: 1200px;
+  --viewport-thereshold: --hexagon-width + --hexagon-margin;
+
+  font-size: min(3.5dvw, 1.4dvh);
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 body {
   background-color: black;
   color: antiquewhite;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
 }
 
 section {
   display: flexbox;
-  height: 60dvh;
-  width: 95dvw;
-  margin-bottom: 5px;
-  /* remove border after development */
-  border: 1px solid aqua;
+  width: max(92dvw, 3dvh);
+  padding: 5px;
+  margin: 10px;
   border-radius: 5%;
   vertical-align: middle;
   align-items: center;
@@ -36,14 +47,16 @@ h2 {
 
 section#welcome-section {
   display: flex;
-  background-color: rgb(2, 2, 43);
-  color: rgb(100, 206, 100);
-  text-align: center;
-  align-items: center;
-  justify-content: center;
+  height: 45dvh;
+  backdrop-filter: blur(25px) saturate(114%);
+  -webkit-backdrop-filter: blur(25px) saturate(114%);
+  background-color: rgba(17, 25, 40, 0.59);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
 }
 
 section#about-me-section {
+  background-color: rgb(0, 13, 41);
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
@@ -73,6 +86,7 @@ div.section-image {
 
 div.description-parent {
   border: 1px solid grey;
+  display: inline-block;
   margin-bottom: 4px;
   border-radius: 40px;
   width: 100%;
@@ -94,10 +108,6 @@ img.logo {
 
 .item-details {
   grid-area: item-details;
-}
-
-section#about-me-section {
-  background-color: rgb(6, 30, 83);
 }
 
 section#technical-skills-section {
@@ -132,20 +142,21 @@ div.tech-skill-details {
 
 section#professional-experiences-section {
   background-color: rgb(40, 0, 77);
+  padding: inherit;
 }
 
 div#professional-experience-content {
   display: grid;
-  grid-template-rows: repeat(2, 240px);
+  grid-template-rows: repeat(2, 2fr);
   grid-template-columns: repeat(2, 1fr);
-  gap: 8px;
+  gap: 2px;
 }
 
 div.prof-exp-item {
   flex: 1 1 auto;
   border: 1px solid grey;
   word-wrap: normal;
-  border-radius: 15px;
+  border-radius: 3%;
 }
 
 section#projects-section {
@@ -166,15 +177,63 @@ div.project-item {
   border-radius: 15px;
 }
 
-img.hobby-image {
-  border-radius: 50%;
-  height: 100px;
+.honeycomb {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 20px; /* Adds spacing between items */
 }
 
-div.hobby-item:not(:hover) {
-  opacity: 0.5;
+.honeycomb-cell {
+  position: relative;
+  width: 250px;
+  height: 150px;
+  margin: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  background-color: #9b59b6;
+  border: 5px solid white;
+  border-radius: 10%;
 }
 
-div.hobby-item:hover {
+.honeycomb-cell:hover {
+  transform: scale(1.1);
+  border-color: #6c3483;
+}
+
+.honeycomb-cell__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+}
+
+.honeycomb-cell:hover .honeycomb-cell__image {
+  opacity: 0.2;
+}
+
+.honeycomb-cell__title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.honeycomb-cell:hover .honeycomb-cell__title {
   opacity: 1;
+}
+
+.honeycomb__placeholder {
+  visibility: hidden;
 }

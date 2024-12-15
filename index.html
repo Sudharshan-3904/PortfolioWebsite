@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Welcome!</title>
     <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="./styles.scss" />
     <script src="./index.js"></script>
   </head>
   <body>
@@ -247,41 +248,47 @@
         <h1>Hobbies</h1>
       </div>
       <div class="section-content" id="hobby-content">
-        <div class="hobby-item" id="web-design-hobby">
-          <img
-            src="./assets/hobby/web_design.jpg"
-            alt="Web Design"
-            class="hobby-image"
-          />
-        </div>
-        <div class="hobby-item" id="driving-hobby">
-          <img
-            src="./assets/hobby/driving.jpg"
-            alt="Driving"
-            class="hobby-image"
-          />
-        </div>
-        <div class="hobby-item" id="reading-hobby">
-          <img
-            src="./assets/hobby/reading.jpg"
-            alt="Reading"
-            class="hobby-image"
-          />
-        </div>
-        <div class="hobby-item" id="cubing-hobby">
-          <img
-            src="./assets/hobby/cubing.jpg"
-            alt="Cubing"
-            class="hobby-image"
-          />
-        </div>
-        <div class="hobby-item" id="event-management-hobby">
-          <img
-            src="./assets/hobby/event_management.jpg"
-            alt="Event Management"
-            class="hobby-image"
-          />
-        </div>
+        <ul class="honeycomb">
+          <li class="honeycomb-cell">
+            <img
+              class="honeycomb-cell__image"
+              src="./assets/hobby/cubing.jpg"
+            />
+            <div class="honeycomb-cell__title">
+              Cubing
+              <p id="honeycomb-cell__detials">Hello</p>
+            </div>
+          </li>
+          <li class="honeycomb-cell">
+            <img
+              class="honeycomb-cell__image"
+              src="./assets/hobby/driving.jpg"
+            />
+            <div class="honeycomb-cell__title">Driving</div>
+          </li>
+          <li class="honeycomb-cell">
+            <img
+              class="honeycomb-cell__image"
+              src="./assets/hobby/event_management.jpg"
+            />
+            <div class="honeycomb-cell__title">Event Management</div>
+          </li>
+          <li class="honeycomb-cell">
+            <img
+              class="honeycomb-cell__image"
+              src="./assets/hobby/reading.jpg"
+            />
+            <div class="honeycomb-cell__title">Reading</div>
+          </li>
+          <li class="honeycomb-cell">
+            <img
+              class="honeycomb-cell__image"
+              src="./assets/hobby/web_design.jpg"
+            />
+            <div class="honeycomb-cell__title">Web Design</div>
+          </li>
+          <li class="honeycomb-cell honeycomb__placeholder"></li>
+        </ul>
       </div>
     </section>
   </body>
